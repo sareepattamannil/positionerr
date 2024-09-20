@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Position Size Calculator",
+  "version": "1.0",
+  "description": "A simple calculator for day trading position size.",
+  "permissions": [],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon.jpg",
+    "32": "icon.jpg",
+    "48": "icon.jpg",
+    "128": "icon.jpg"
+  }
+}
