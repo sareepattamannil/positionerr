@@ -8,21 +8,57 @@
 </head>
 <body>
     <div class="container">
-        <h1>Position Size Calculator</h1>
-        <label for="balance">Balance ($):</label>
-        <input type="number" id="balance" placeholder="Enter your balance">
+        <h1>Trade Tools</h1>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('positionSizeTab')">Position Size</button>
+            <button class="tab-button" onclick="openTab('tradeLogTab')">Trade Log</button>
+        </div>
 
-        <label for="risk">Risk Size (%):</label>
-        <input type="number" id="risk" placeholder="Enter risk size">
+        <div id="positionSizeTab" class="tab-content active">
+            <label for="balance">Balance ($):</label>
+            <input type="number" id="balance" placeholder="Enter your balance">
 
-        <label for="stopLoss">Stop Loss ($):</label>
-        <input type="number" id="stopLoss" placeholder="Enter stop loss">
+            <label for="risk">Risk Size (%):</label>
+            <input type="number" id="risk" placeholder="Enter risk size">
 
-        <button id="calculate">Calculate</button>
+            <label for="stopLoss">Stop Loss ($):</label>
+            <input type="number" id="stopLoss" placeholder="Enter stop loss">
 
-        <h2>Results:</h2>
-        <p id="riskAmount">Risk Amount: $0</p>
-        <p id="positionSize">Position Size: 0 shares</p>
+            <button id="calculate">Calculate</button>
+
+            <h2>Results:</h2>
+            <p id="riskAmount">Risk Amount: $0</p>
+            <p id="positionSize">Position Size: 0 shares</p>
+        </div>
+
+        <div id="tradeLogTab" class="tab-content">
+            <label for="entryPrice">Entry Price ($):</label>
+            <input type="number" id="entryPrice" placeholder="Enter entry price">
+            
+            <label for="profit">Profit ($):</label>
+            <input type="number" id="profit" placeholder="Enter profit">
+            
+            <button id="addTrade">Add Trade</button>
+            
+            <h3>Trade List:</h3>
+            <table id="tradeList">
+                <thead>
+                    <tr>
+                        <th>Entry Price</th>
+                        <th>Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Trade entries will be dynamically added here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="total">Total Daily Profit:</td>
+                        <td id="totalProfit" class="total">$0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
     <script src="popup.js"></script>
 </body>
